@@ -1,0 +1,17 @@
+1. export cross-compiler
+
+2. build linux, assume /path/to/linux
+   # wireless core
+   CONFIG_WIRELESS=y
+   CONFIG_CFG80211=y
+   CONFIG_MAC80211=y
+   CONFIG_CFG80211_WEXT=y
+
+   # wireless drivers
+   CONFIG_WLAN=y
+
+3. build rtl8822cs
+
+   $ cd rtl8822cs
+   $ make ARCH=arm64 -C "/path/to/linux" M="/path/to/rtl8822cs" CONFIG_RTL8822BS=m
+   $ make ARCH=arm64 -C "/path/to/linux" M="/path/to/rtl8822cs" INSTALL_MOD_PATH="/path/to/modules" modules_install
