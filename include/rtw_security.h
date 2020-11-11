@@ -251,7 +251,11 @@ struct security_priv {
 #define SEC_IS_BIP_KEY_INSTALLED(sec) _FALSE
 #endif
 
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 8, 0))
+struct rtw_sha256_state {
+#else
 struct sha256_state {
+#endif
 	u64 length;
 	u32 state[8], curlen;
 	u8 buf[64];
