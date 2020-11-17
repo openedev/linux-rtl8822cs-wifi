@@ -1,3 +1,8 @@
+These wireless drivers are recommended to build at host than the target.
+We never build these drivers at target. 
+
+Compatible Linux versions: Linux-5.9.8
+
 1. export cross-compiler
 
 2. build linux, assume /path/to/linux
@@ -13,5 +18,5 @@
 3. build rtl8822cs
 
    $ cd rtl8822cs
-   $ make ARCH=arm64 -C "/path/to/linux" M="/path/to/rtl8822cs" CONFIG_RTL8822BS=m
+   $ make ARCH=arm64 -C "/path/to/linux" M="/path/to/rtl8822cs" CONFIG_RTL8822CS=m
    $ make ARCH=arm64 -C "/path/to/linux" M="/path/to/rtl8822cs" INSTALL_MOD_PATH="/path/to/modules" modules_install
